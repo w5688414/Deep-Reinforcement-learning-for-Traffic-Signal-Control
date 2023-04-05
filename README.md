@@ -3,7 +3,7 @@
 ## **Outline:**
 
 The system utilises SUMO traffic simulator and Python 3 with Pytorch. The system is developed for a minor arterial road intersection 
-with traffic lights with turning signals. Utilising the reinforcement learning algorithm called Deep Q-learning, the system tries to choose the optimal traffic duration and phase to minimise traffic waiting 
+with traffic lights with turning signals. Utilising the reinforcement learning algorithm called Deep Reinforcement Learning, the system tries to choose the optimal traffic duration and phase to minimise traffic waiting 
 times around the intersection. 
 A 7 second yellow interval was employed, and green durations were adjusted between 10 s, 15 s and 20 s, depending on the vehicle demand. 
 This system is a modified and adapted system developed by [1] as well as extracts from work done by [2, 3]. 
@@ -15,7 +15,9 @@ Induction loop sensors were considered and thus the data from these sensors is w
 ```
 export SUMO_HOME=/usr/share/sumo
 export PYTHONPATH="$SUMO_HOME/tools:$PYTHONPATH"
-
+```
+```
+pip install -r requirements.txt
 ```
 
 ## **The Agent:**
@@ -23,34 +25,27 @@ export PYTHONPATH="$SUMO_HOME/tools:$PYTHONPATH"
 **Framework:** Deep Q-Learning
 
 ```
-
 python main.py --model_name dqn
 ```
 
 **Framework:** PPO
 
 ```
-
 python main.py --model_name ppo
 ```
 
 **Framework:** A2C
 
 ```
-
 python main.py --model_name a2c
 ```
 
 
-
-
 ## **Requirements to run the code:**
+
 •	Python 
-
 •	Pytorch 
-
 •	SUMO Traffic simulator
-
 •	Traffic Control Interface (TraCI) – this is included with SUMO
 
 ## **Additional files for the traffic generation and intersection layout:**
